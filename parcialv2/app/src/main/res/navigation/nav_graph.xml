@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.parcialv2.WelcomeFragment"
+        android:label="Inicio">
+        <action
+            android:id="@+id/action_inicio_to_juego"
+            app:destination="@id/gameFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.parcialv2.GameFragment"
+        android:label="Juego">
+        <action
+            android:id="@+id/action_juego_to_result"
+            app:destination="@id/resultFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.parcialv2.ResultFragment"
+        android:label="Resultado">
+        <action
+            android:id="@+id/action_result_to_inicio"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
+
+</navigation>

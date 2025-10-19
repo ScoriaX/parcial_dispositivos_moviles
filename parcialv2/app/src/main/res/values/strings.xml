@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">parcialv2</string>
+    <string name="dialog_title">¡BIENVENIDO!</string>
+    <string name="dialog_message">
+    <![CDATA[
+    <b>REGLAS DEL JUEGO:</b><br/><br/>
+    - Selecciona el botón del color que coincida con el texto en pantalla.<br/>
+    - Cada acierto equivale a <b>1 punto</b>.<br/>
+    - Tienes <b>30 segundos</b> para sumar la máxima cantidad de puntos.<br/><br/>
+    ¡Diviértete!
+    ]]>
+    </string>
+    <string name="dialog_button_start">COMENZAR</string>
+    <string name="button_start_game">INICIAR JUEGO</string>
+    <string name="game_title">JUEGO DE COLORES</string>
+    <string name="game_color">ROJO</string>
+    <string name="game_puntaje">PUNTAJE: 0</string>
+    <string name="game_tiempo">TIEMPO: 0</string>
+    <string name="btn_salir">SALIR</string>
+    <string name="result_puntaje">PUNTAJE: 0</string>
+    <string name="result_mayor_puntaje">PUNTAJE MÁS ALTO: 0</string>
+    <string name="result_historial">HISTORIAL</string>
+    <string name="btn_volver">VOLVER A JUGAR</string>
+    <string name="colores">🟥    🟦    🟩    🟨</string>
+
+</resources>
