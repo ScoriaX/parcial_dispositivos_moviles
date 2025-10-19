@@ -16,6 +16,7 @@ import android.media.AudioAttributes
 
 class GameFragment : Fragment() {
 
+    // VARIABLES
     private lateinit var tvColorName: TextView
     private lateinit var tvScore: TextView
     private lateinit var tvTimer: TextView
@@ -28,6 +29,7 @@ class GameFragment : Fragment() {
     private var soundCorrect: Int = 0
     private var soundWrong: Int = 0
 
+    // LISTA DE COLORES
     private val colorNames = listOf("ROJO", "AZUL", "VERDE", "AMARILLO")
     private val colorValues = mapOf(
         "ROJO" to R.color.red,
@@ -58,9 +60,11 @@ class GameFragment : Fragment() {
             .setAudioAttributes(audioAttributes)
             .build()
 
+        // ASIGNACION DE AUDIOS
         soundCorrect = soundPool.load(requireContext(), R.raw.correct_sound, 1)
         soundWrong = soundPool.load(requireContext(), R.raw.wrong_sound, 1)
 
+        // ASIGNACIONES
         tvColorName = view.findViewById(R.id.tvColorName)
         tvScore = view.findViewById(R.id.tvScore)
         tvTimer = view.findViewById(R.id.tvTimer)
@@ -75,8 +79,10 @@ class GameFragment : Fragment() {
         btnGreen.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.green))
         btnYellow.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.yellow))
 
+        // EMPIEZA EL JUEGO
         startGame()
 
+        // IMPLEMENTACION DE LOS BOTONES
         btnRed.setOnClickListener { checkAnswer("ROJO") }
         btnBlue.setOnClickListener { checkAnswer("AZUL") }
         btnGreen.setOnClickListener { checkAnswer("VERDE") }
@@ -86,6 +92,8 @@ class GameFragment : Fragment() {
         return view
     }
 
+    // IMPLEMENTACIONES
+    // EMPIEZA EL JUEGO INICIANDO LAS DEMAS VARIABLES A TRAVÉS DE LAS FUNCIONES
     private fun startGame() {
         score = 0
         updateScore()
@@ -93,6 +101,7 @@ class GameFragment : Fragment() {
         startTimer()
     }
 
+    // INICIAR TIMER
     private fun startTimer() {
         timer = object : CountDownTimer(30000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
@@ -106,6 +115,7 @@ class GameFragment : Fragment() {
         }.start()
     }
 
+    // ESTABLECER NUEVO COLOR
     private fun nextColor() {
         currentColorName = colorNames.random()
         val randomColorNameForText = colorNames.random()
@@ -115,20 +125,25 @@ class GameFragment : Fragment() {
         tvColorName.setTextColor(currentTextColor)
     }
 
+    // COMPROBAR RESPUESTA
     private fun checkAnswer(selected: String) {
         if (selected == currentColorName) {
             score++
             updateScore()
+            // SUENA EL SONIDO DE SELECCION CORRECTA
             soundPool.play(soundCorrect, 2f, 2f, 0, 0, 1f)
         }
         nextColor()
+        // SUENA EL SONIDO DE SELECCION INCORRECTA
         soundPool.play(soundWrong, 3f, 3f, 0, 0, 1f)
     }
 
+    // ACTUALIZAR EL PUNTAJE
     private fun updateScore() {
         tvScore.text = "PUNTAJE: $score"
     }
 
+    // FINALIZAR EL JUEGO
     private fun endGame() {
         timer.cancel()
         val bundle = Bundle().apply { putInt("score", score) }

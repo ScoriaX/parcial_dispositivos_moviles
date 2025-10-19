@@ -17,8 +17,10 @@ class WelcomeFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_inicio, container, false)
         val btnIniciarJuego: Button = view.findViewById(R.id.btnIniciarJuego)
 
+        // MOSTRAR EL MENSAJE DE BIENVENIDA
         showWelcomeDialog()
 
+        // IR AL SIGUIENTE FRAGMENT
         btnIniciarJuego.setOnClickListener {
             findNavController().navigate(R.id.action_inicio_to_juego)
         }
@@ -26,6 +28,7 @@ class WelcomeFragment : Fragment() {
         return view
     }
 
+    // IMPLEMENTACION DE EL MENSAJE DE BIENVENIDA
     private fun showWelcomeDialog() {
         val builder = AlertDialog.Builder(requireContext())
         builder.setTitle(getString(R.string.dialog_title))
