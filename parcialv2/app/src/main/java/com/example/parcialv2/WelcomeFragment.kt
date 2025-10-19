@@ -1,3 +1,8 @@
+// Descripción: Fragmento principal que funciona como menu de inicio, que presenta las reglas del juego.
+// Autor: Piero Poblete
+// Fecha creación: 17/10/2025
+// Última modificación: 19/10/2025
+
 package com.example.parcialv2
 
 import android.os.Bundle

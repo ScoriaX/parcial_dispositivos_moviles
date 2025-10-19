@@ -1,3 +1,10 @@
+// Descripción: Fragmento que muestra los
+// resultados obtenidos, tanto en el juego
+// actual como el historico de la sesión.
+// Autor: Piero Poblete
+// Fecha creación: 17/10/2025
+// Última modificación: 19/10/2025
+
 package com.example.parcialv2
 
 import android.content.Context

@@ -1,3 +1,9 @@
+// Descripción: Fragmento de juego que presenta la logica principal,
+// muestra tiempo, puntaje, el texto del color y los botones.
+// Autor: Piero Poblete
+// Fecha creación: 17/10/2025
+// Última modificación: 19/10/2025
+
 package com.example.parcialv2
 
 import android.os.Bundle
